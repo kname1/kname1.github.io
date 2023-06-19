@@ -348,6 +348,7 @@ html.nightmode {
   -webkit-box-sizing: inherit;
   -moz-box-sizing: inherit;
   box-sizing: inherit;
+  text-align:center;
 }
 html {
   -webkit-box-sizing: border-box;
@@ -893,6 +894,17 @@ kbd {
   width: 100%;
   height: 100%;
   background: url("/images/BOCCHI.jpg") no-repeat center/cover;
+}
+.header-banner::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.1);
 }
 .header-banner-info {
   position: absolute;
