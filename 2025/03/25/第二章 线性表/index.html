@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.8.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.8.0" type="image/png" sizes="32x32"><meta name="description" content="第二章 线性表                           线性表的类型定义                           线性表        线性表是n个数据元素的有限序列。通常记为(a1,a2….an) 线性表中的数据元素可以是整型的、可以是字符型的、可以是结构体类型的等等。 线性表是一种线性结构，数据元素之间是一种“一对一”的关系。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kurobalt">
+<meta property="og:url" content="http://example.com/2025/03/25/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E7%BA%BF%E6%80%A7%E8%A1%A8/index.html">
+<meta property="og:site_name" content="Kurobalt">
+<meta property="og:description" content="第二章 线性表                           线性表的类型定义                           线性表        线性表是n个数据元素的有限序列。通常记为(a1,a2….an) 线性表中的数据元素可以是整型的、可以是字符型的、可以是结构体类型的等等。 线性表是一种线性结构，数据元素之间是一种“一对一”的关系。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-03-25T07:20:22.302Z">
+<meta property="article:modified_time" content="2022-09-10T10:01:15.764Z">
+<meta property="article:author" content="Kurobalt">
+<meta name="twitter:card" content="summary"><title>[ 文章无标题 ] | Kurobalt</title><link ref="canonical" href="http://example.com/2025/03/25/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E7%BA%BF%E6%80%A7%E8%A1%A8/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.8.0"><link rel="stylesheet" href="css/custom.css"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: true,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/read/"><span class="header-nav-menu-item__icon"><i class="fas fa-book"></i></span><span class="header-nav-menu-item__text">阅读</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hello Everyone</div><div class="header-banner-info__subtitle">Welcome to this world</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">[ 文章无标题 ]</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2025-03-25</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-09-10</span></span><span class="post-meta-item post-meta-item--visitors"><span class="post-meta-item__icon"><i class="fas fa-eye"></i></span><span class="post-meta-item__info">阅读次数</span><span class="post-meta-item__value" id="busuanzi_value_page_pv"></span></span></div></header><div class="post-body">
+        <h1 id="第二章-线性表"   >
+          <a href="#第二章-线性表" class="heading-link"><i class="fas fa-link"></i></a><a href="#第二章-线性表" class="headerlink" title="第二章 线性表"></a>第二章 线性表</h1>
+      
+        <h2 id="线性表的类型定义"   >
+          <a href="#线性表的类型定义" class="heading-link"><i class="fas fa-link"></i></a><a href="#线性表的类型定义" class="headerlink" title="线性表的类型定义"></a>线性表的类型定义</h2>
+      
+        <h3 id="线性表"   >
+          <a href="#线性表" class="heading-link"><i class="fas fa-link"></i></a><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h3>
+      <blockquote>
+<p><strong>线性表是n个数据元素的有限序列。通常记为(a1,a2….an)</strong></p>
+<p>线性表中的数据元素可以是整型的、可以是字符型的、可以是结构体类型的等等。</p>
+<p>线性表是一种线性结构，数据元素之间是一种<strong>“一对一”</strong>的关系。</p>
+</blockquote>
+
+        <h3 id="线性表的长度"   >
+          <a href="#线性表的长度" class="heading-link"><i class="fas fa-link"></i></a><a href="#线性表的长度" class="headerlink" title="线性表的长度"></a>线性表的长度</h3>
+      <blockquote>
+<p>线性表中数据元素的个数n(n&gt;&#x3D;0)称为线性表的长度</p>
+</blockquote>
+
+        <h3 id="空表"   >
+          <a href="#空表" class="heading-link"><i class="fas fa-link"></i></a><a href="#空表" class="headerlink" title="空表"></a>空表</h3>
+      <blockquote>
+<p>n&#x3D;0时称为空表</p>
+</blockquote>
+
+        <h3 id="线性表的基本操作"   >
+          <a href="#线性表的基本操作" class="heading-link"><i class="fas fa-link"></i></a><a href="#线性表的基本操作" class="headerlink" title="线性表的基本操作"></a>线性表的基本操作</h3>
+      
+        <h4 id="InitList-amp-L"   >
+          <a href="#InitList-amp-L" class="heading-link"><i class="fas fa-link"></i></a><a href="#InitList-amp-L" class="headerlink" title="InitList(&amp;L)"></a>InitList(&amp;L)</h4>
+      <blockquote>
+<p>初始化操作，构造一个空的线性表L。</p>
+</blockquote>
+
+        <h4 id="InsertList-amp-L-i-amp-e"   >
+          <a href="#InsertList-amp-L-i-amp-e" class="heading-link"><i class="fas fa-link"></i></a><a href="#InsertList-amp-L-i-amp-e" class="headerlink" title="InsertList(&amp;L,i,&amp;e)"></a>InsertList(&amp;L,i,&amp;e)</h4>
+      <blockquote>
+<p>在线性表L的第i个位置插入新的数据元素e</p>
+</blockquote>
+
+        <h4 id="DeleteList-amp-L-i-amp-e"   >
+          <a href="#DeleteList-amp-L-i-amp-e" class="heading-link"><i class="fas fa-link"></i></a><a href="#DeleteList-amp-L-i-amp-e" class="headerlink" title="DeleteList(&amp;L,i,&amp;e)"></a>DeleteList(&amp;L,i,&amp;e)</h4>
+      <blockquote>
+<p>删除线性表L的第i个位置的数据元素，并用e返回其值</p>
+</blockquote>
+
+        <h4 id="ClearList-amp-L"   >
+          <a href="#ClearList-amp-L" class="heading-link"><i class="fas fa-link"></i></a><a href="#ClearList-amp-L" class="headerlink" title="ClearList(&amp;L)"></a>ClearList(&amp;L)</h4>
+      <blockquote>
+<p>将一个线性表L称之为一个空表</p>
+</blockquote>
+
+        <h4 id="ListEmpty-L"   >
+          <a href="#ListEmpty-L" class="heading-link"><i class="fas fa-link"></i></a><a href="#ListEmpty-L" class="headerlink" title="ListEmpty(L)"></a>ListEmpty(L)</h4>
+      <blockquote>
+<p>判断一个表是否为空表</p>
+</blockquote>
+
+        <h4 id="GetElem-L-i-amp-e"   >
+          <a href="#GetElem-L-i-amp-e" class="heading-link"><i class="fas fa-link"></i></a><a href="#GetElem-L-i-amp-e" class="headerlink" title="GetElem(L,i,&amp;e)"></a>GetElem(L,i,&amp;e)</h4>
+      <blockquote>
+<p>将线性表L的第i个位置的数据元素返回给e</p>
+</blockquote>
+
+        <h4 id="LocateElem-L-e"   >
+          <a href="#LocateElem-L-e" class="heading-link"><i class="fas fa-link"></i></a><a href="#LocateElem-L-e" class="headerlink" title="LocateElem(L,e)"></a>LocateElem(L,e)</h4>
+      <blockquote>
+<p>查找线性表L中是否有给定值相等的数据元素，有则返回该元素的序号</p>
+</blockquote>
+
+        <h4 id="ListLength-L"   >
+          <a href="#ListLength-L" class="heading-link"><i class="fas fa-link"></i></a><a href="#ListLength-L" class="headerlink" title="ListLength(L)"></a>ListLength(L)</h4>
+      <blockquote>
+<p>返回L表长</p>
+</blockquote>
+
+        <h2 id="线性表的顺序表示和实现"   >
+          <a href="#线性表的顺序表示和实现" class="heading-link"><i class="fas fa-link"></i></a><a href="#线性表的顺序表示和实现" class="headerlink" title="线性表的顺序表示和实现"></a>线性表的顺序表示和实现</h2>
+      <blockquote>
+<p><strong>采用顺序存储结构的线性表称为顺序表</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>顺序表是一种随机存取的存储结构</strong></p>
+</blockquote>
+
+        <h5 id="顺序表存储结构的类型定义如下："   >
+          <a href="#顺序表存储结构的类型定义如下：" class="heading-link"><i class="fas fa-link"></i></a><a href="#顺序表存储结构的类型定义如下：" class="headerlink" title="顺序表存储结构的类型定义如下："></a>顺序表存储结构的类型定义如下：</h5>
+      <figure class="highlight c"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">define ListSize <span class="number">100</span>        <span class="comment">//顺序表的最大尺寸</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> DataType;       <span class="comment">//顺序表元素类型</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">    &#123;</span></span><br><span class="line"></span><br><span class="line">        DataType <span class="built_in">list</span>[ListSize];<span class="comment">//存储顺序表数据的数组</span></span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> length;             <span class="comment">//顺序表长度</span></span><br><span class="line"></span><br><span class="line">    &#125;SeqList;				<span class="comment">//顺序表类型</span></span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+<p>&#x2F;&#x2F;struct是关键字，表示一个结构体类型，SeqList是该结构体的类型名；</p>
+<p>{ }里面是结构体的成员，list［ListSize］用来存储线性表中的数据元素，length表示当前线性表中数据元素的个数；</p>
+<p>如果要定义一个顺序表L，则SeqList L。</p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4>
+        <h5 id="顺序表基本操作的实现"   >
+          <a href="#顺序表基本操作的实现" class="heading-link"><i class="fas fa-link"></i></a><a href="#顺序表基本操作的实现" class="headerlink" title="顺序表基本操作的实现"></a>顺序表基本操作的实现</h5>
+      
+        <h6 id="1-顺序表的插入"   >
+          <a href="#1-顺序表的插入" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-顺序表的插入" class="headerlink" title="1.顺序表的插入"></a>1.顺序表的插入</h6>
+      <p>插入过程：</p>
+<p>（1）第i个位置以后的数据元素依次后移</p>
+<p>（2）将待插入数据元素插入到第i个位置</p>
+<p>（3）将顺序表的表长+1</p>
+<figure class="highlight c"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">InsertList</span><span class="params">(SeqList *L,<span class="type">int</span> i,DataType e)</span>&#123;</span><br><span class="line">        <span class="type">int</span> j;</span><br><span class="line">        <span class="keyword">if</span>(L-&gt;length&gt;=ListSize)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;顺序表已满无法插入！\n&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(i&lt;<span class="number">1</span>||i&gt;L-&gt;length+<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;插入的位置i不合法！\n&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">for</span>(j=L-&gt;length;j&gt;=i;j--)&#123;</span><br><span class="line">             L-&gt;<span class="built_in">list</span>[j]=L-&gt;<span class="built_in">list</span>[j<span class="number">-1</span>];</span><br><span class="line">             L-&gt;<span class="built_in">list</span>[j<span class="number">-1</span>]=e;</span><br><span class="line">             L-&gt;length=L-&gt;length+<span class="number">1</span>;</span><br><span class="line">             <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></div></figure>
+
+
+
+
+
+
+        <h4 id="头指针"   >
+          <a href="#头指针" class="heading-link"><i class="fas fa-link"></i></a><a href="#头指针" class="headerlink" title="头指针"></a>头指针</h4>
+      <p>只存储第一个结点的地址</p>
+<p><strong>顺序表的存储具有随机性，链表不具有此特点</strong></p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">Kurobalt</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2025/03/25/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E7%BA%BF%E6%80%A7%E8%A1%A8/">http://example.com/2025/03/25/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E7%BA%BF%E6%80%A7%E8%A1%A8/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2025/03/25/%E9%98%9F%E5%88%97queue/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">[ 文章无标题 ]</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2025/03/25/%E5%8D%95%E9%93%BE%E8%A1%A8/"><span class="paginator-prev__text">[ 文章无标题 ]</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%BA%BF%E6%80%A7%E8%A1%A8"><span class="toc-number">1.</span> <span class="toc-text">
+          第二章 线性表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.</span> <span class="toc-text">
+          线性表的类型定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8"><span class="toc-number">1.1.1.</span> <span class="toc-text">
+          线性表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%95%BF%E5%BA%A6"><span class="toc-number">1.1.2.</span> <span class="toc-text">
+          线性表的长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E8%A1%A8"><span class="toc-number">1.1.3.</span> <span class="toc-text">
+          空表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.4.</span> <span class="toc-text">
+          线性表的基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#InitList-amp-L"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">
+          InitList(&amp;L)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#InsertList-amp-L-i-amp-e"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">
+          InsertList(&amp;L,i,&amp;e)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DeleteList-amp-L-i-amp-e"><span class="toc-number">1.1.4.3.</span> <span class="toc-text">
+          DeleteList(&amp;L,i,&amp;e)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ClearList-amp-L"><span class="toc-number">1.1.4.4.</span> <span class="toc-text">
+          ClearList(&amp;L)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ListEmpty-L"><span class="toc-number">1.1.4.5.</span> <span class="toc-text">
+          ListEmpty(L)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#GetElem-L-i-amp-e"><span class="toc-number">1.1.4.6.</span> <span class="toc-text">
+          GetElem(L,i,&amp;e)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LocateElem-L-e"><span class="toc-number">1.1.4.7.</span> <span class="toc-text">
+          LocateElem(L,e)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ListLength-L"><span class="toc-number">1.1.4.8.</span> <span class="toc-text">
+          ListLength(L)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.2.</span> <span class="toc-text">
+          线性表的顺序表示和实现</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E8%A1%A8%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="toc-number">1.2.0.0.1.</span> <span class="toc-text">
+          顺序表存储结构的类型定义如下：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.2.0.1.</span> <span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E8%A1%A8%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.2.0.1.1.</span> <span class="toc-text">
+          顺序表基本操作的实现</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%9A%84%E6%8F%92%E5%85%A5"><span class="toc-number">1.2.0.1.1.1.</span> <span class="toc-text">
+          1.顺序表的插入</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%B4%E6%8C%87%E9%92%88"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">
+          头指针</span></a></li></ol></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/author.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">我是前端菜鸡</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/kname1" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://space.bilibili.com/1399557935?spm_id_from=333.1007.0.0" target="_blank" rel="noopener" data-popover="social.bilibili" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">Bili</span></a><a class="sidebar-ov-social-item" href="https://www.youtube.com/channel/UC0l-QkAdz0oc33TM5cjf7xg" target="_blank" rel="noopener" data-popover="Youtube" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-youtube"></i></span></a><a class="sidebar-ov-social-item" href="images/wechat.jpg" target="_blank" rel="noopener" data-popover="微信" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-weixin"></i></span></a><a class="sidebar-ov-social-item" href="../images/qq.jpg" target="_blank" rel="noopener" data-popover="QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">16</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">0</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2025</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Kurobalt</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v6.3.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.8.0</span></div><div class="busuanzi"><span class="busuanzi-siteuv"><span class="busuanzi-siteuv__icon"><i class="fas fa-user"></i></span><span class="busuanzi-siteuv__info">访问人数</span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_uv"></span></span><span class="busuanzi-sitepv"><span class="busuanzi-siteuv__icon"><i class="fas fa-eye"></i></span><span class="busuanzi-siteuv__info">浏览总量</span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_pv"></span></span></div><div>kurobalt'blog</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@latest/bsz.pure.mini.js" async></script><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script></body></html>

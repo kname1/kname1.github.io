@@ -1,0 +1,188 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.8.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.8.0" type="image/png" sizes="32x32"><meta name="description" content="队列queue                           队列的类型定义        头删尾进                      队列的基本概念       1.队列，它是允许在表的一段进行插入操作，在表的另一端进行删除操作的线性表 2.允许插入操作的叫队尾（rear），允许进行删除操作的一端称为队头（front）。 3.不含任何数据元素">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kurobalt">
+<meta property="og:url" content="http://example.com/2025/03/25/%E9%98%9F%E5%88%97queue/index.html">
+<meta property="og:site_name" content="Kurobalt">
+<meta property="og:description" content="队列queue                           队列的类型定义        头删尾进                      队列的基本概念       1.队列，它是允许在表的一段进行插入操作，在表的另一端进行删除操作的线性表 2.允许插入操作的叫队尾（rear），允许进行删除操作的一端称为队头（front）。 3.不含任何数据元素">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-03-25T07:20:22.303Z">
+<meta property="article:modified_time" content="2022-09-23T10:21:50.628Z">
+<meta property="article:author" content="Kurobalt">
+<meta name="twitter:card" content="summary"><title>[ 文章无标题 ] | Kurobalt</title><link ref="canonical" href="http://example.com/2025/03/25/%E9%98%9F%E5%88%97queue/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.8.0"><link rel="stylesheet" href="css/custom.css"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: true,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/read/"><span class="header-nav-menu-item__icon"><i class="fas fa-book"></i></span><span class="header-nav-menu-item__text">阅读</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hello Everyone</div><div class="header-banner-info__subtitle">Welcome to this world</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">[ 文章无标题 ]</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2025-03-25</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-09-23</span></span><span class="post-meta-item post-meta-item--visitors"><span class="post-meta-item__icon"><i class="fas fa-eye"></i></span><span class="post-meta-item__info">阅读次数</span><span class="post-meta-item__value" id="busuanzi_value_page_pv"></span></span></div></header><div class="post-body">
+        <h1 id="队列queue"   >
+          <a href="#队列queue" class="heading-link"><i class="fas fa-link"></i></a><a href="#队列queue" class="headerlink" title="队列queue"></a>队列queue</h1>
+      
+        <h2 id="队列的类型定义"   >
+          <a href="#队列的类型定义" class="heading-link"><i class="fas fa-link"></i></a><a href="#队列的类型定义" class="headerlink" title="队列的类型定义"></a>队列的类型定义</h2>
+      <blockquote>
+<p>头删尾进</p>
+</blockquote>
+
+        <h3 id="队列的基本概念"   >
+          <a href="#队列的基本概念" class="heading-link"><i class="fas fa-link"></i></a><a href="#队列的基本概念" class="headerlink" title="队列的基本概念"></a>队列的基本概念</h3>
+      <p>1.队列，它是允许在表的一段进行插入操作，在表的另一端进行删除操作的线性表</p>
+<p><strong>2.允许插入操作的叫队尾（rear），允许进行删除操作的一端称为队头（front）。</strong></p>
+<p>3.不含任何数据元素的队列叫空队列</p>
+<p>4.队列的插入操作称为入队，队列的删除操作称为出队</p>
+
+        <h3 id="队列的进一步理解"   >
+          <a href="#队列的进一步理解" class="heading-link"><i class="fas fa-link"></i></a><a href="#队列的进一步理解" class="headerlink" title="队列的进一步理解"></a>队列的进一步理解</h3>
+      <p>1.队列是一种线性结构</p>
+<p>2.队列是一个线性表，但它是一种特殊的线性表。</p>
+<p><strong>队列只能在队尾插入，队头删除。</strong></p>
+<p>操作原则;先进先出</p>
+
+        <h3 id="队列的基本操作"   >
+          <a href="#队列的基本操作" class="heading-link"><i class="fas fa-link"></i></a><a href="#队列的基本操作" class="headerlink" title="队列的基本操作"></a>队列的基本操作</h3>
+      
+        <h4 id="InitQueue-amp-Q"   >
+          <a href="#InitQueue-amp-Q" class="heading-link"><i class="fas fa-link"></i></a><a href="#InitQueue-amp-Q" class="headerlink" title="InitQueue(&amp;Q):"></a>InitQueue(&amp;Q):</h4>
+      <p>队列的初始化，创造一个空的队列</p>
+
+        <h4 id="EnQueue-amp-Q-e"   >
+          <a href="#EnQueue-amp-Q-e" class="heading-link"><i class="fas fa-link"></i></a><a href="#EnQueue-amp-Q-e" class="headerlink" title="EnQueue(&amp;Q,e):"></a>EnQueue(&amp;Q,e):</h4>
+      <p>入队，在队列Q的队尾插入新的数据元素e</p>
+
+        <h4 id="DeQueue-amp-Q-amp-e"   >
+          <a href="#DeQueue-amp-Q-amp-e" class="heading-link"><i class="fas fa-link"></i></a><a href="#DeQueue-amp-Q-amp-e" class="headerlink" title="DeQueue(&amp;Q,&amp;e):"></a>DeQueue(&amp;Q,&amp;e):</h4>
+      <p>出队，删除队列Q的队头元素，用 e 返回其值</p>
+
+        <h4 id="DestoryQueue-amp-Q"   >
+          <a href="#DestoryQueue-amp-Q" class="heading-link"><i class="fas fa-link"></i></a><a href="#DestoryQueue-amp-Q" class="headerlink" title="DestoryQueue(&amp;Q):"></a>DestoryQueue(&amp;Q):</h4>
+      <p>销毁队列Q，释放Q占用的存储空间</p>
+
+        <h4 id="QueueEmpty-Q"   >
+          <a href="#QueueEmpty-Q" class="heading-link"><i class="fas fa-link"></i></a><a href="#QueueEmpty-Q" class="headerlink" title="QueueEmpty(Q):"></a>QueueEmpty(Q):</h4>
+      <p>判断一个队列是否为空，是返回1，不是返回0</p>
+
+        <h4 id="GetHead-Q-amp-e"   >
+          <a href="#GetHead-Q-amp-e" class="heading-link"><i class="fas fa-link"></i></a><a href="#GetHead-Q-amp-e" class="headerlink" title="GetHead(Q,&amp;e):"></a>GetHead(Q,&amp;e):</h4>
+      <p>取队头元素，将队列Q的队头元素返回给e</p>
+
+        <h2 id="队列的顺序表示和实现"   >
+          <a href="#队列的顺序表示和实现" class="heading-link"><i class="fas fa-link"></i></a><a href="#队列的顺序表示和实现" class="headerlink" title="队列的顺序表示和实现"></a>队列的顺序表示和实现</h2>
+      <blockquote>
+<p>为了解决假循环，提出了顺序循环队列，当后面满时，就可以再从头开始，以顺序循环队列实现队列的顺序存储。</p>
+</blockquote>
+
+        <h3 id="区分队空和队满"   >
+          <a href="#区分队空和队满" class="heading-link"><i class="fas fa-link"></i></a><a href="#区分队空和队满" class="headerlink" title="区分队空和队满"></a>区分队空和队满</h3>
+      <p>​	队空时，front&#x3D;&#x3D;rear,现在队满，依然是front&#x3D;&#x3D;rear，那么根据front&#x3D;&#x3D;rear无法区别队空还是队满的情况</p>
+
+        <h4 id="解决方法1"   >
+          <a href="#解决方法1" class="heading-link"><i class="fas fa-link"></i></a><a href="#解决方法1" class="headerlink" title="解决方法1"></a>解决方法1</h4>
+      <p>​	设置一个标志变量flag，front&#x3D;&#x3D;rear,且flag&#x3D;0时，队空；flag&#x3D;1时，队满</p>
+
+        <h4 id="解决方法2"   >
+          <a href="#解决方法2" class="heading-link"><i class="fas fa-link"></i></a><a href="#解决方法2" class="headerlink" title="解决方法2"></a>解决方法2</h4>
+      <p>​	少用一个存储单元，front&#x3D;&#x3D;rear,队空；front&#x3D;&#x3D;(rear+1)%MaxQueueSize,队满</p>
+
+        <h3 id="顺序循环队列存储结构的类型定义如下："   >
+          <a href="#顺序循环队列存储结构的类型定义如下：" class="heading-link"><i class="fas fa-link"></i></a><a href="#顺序循环队列存储结构的类型定义如下：" class="headerlink" title="顺序循环队列存储结构的类型定义如下："></a>顺序循环队列存储结构的类型定义如下：</h3>
+      <figure class="highlight c"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    DataType data[MAXSIZE];</span><br><span class="line">    <span class="type">int</span> front;</span><br><span class="line">    <span class="type">int</span> rear;</span><br><span class="line">&#125;SqQueue;</span><br></pre></td></tr></table></div></figure>
+
+
+
+
+        <h3 id="入队操作算法实现："   >
+          <a href="#入队操作算法实现：" class="heading-link"><i class="fas fa-link"></i></a><a href="#入队操作算法实现：" class="headerlink" title="入队操作算法实现："></a>入队操作算法实现：</h3>
+      <figure class="highlight c"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">EnQueue</span><span class="params">(SqQueue *Q,DataType e)</span></span><br><span class="line">&#123;</span><br><span class="line"> 	<span class="keyword">if</span>((Q-&gt;rear+<span class="number">1</span>)%MAXSIZE==Q-&gt;front)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    Q-&gt;data[Q-&gt;rear]=e;</span><br><span class="line">    Q-&gt;rear=(Q-&gt;rear+<span class="number">1</span>)%MAXSIZE;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+
+
+        <h3 id="出队操作算法实现："   >
+          <a href="#出队操作算法实现：" class="heading-link"><i class="fas fa-link"></i></a><a href="#出队操作算法实现：" class="headerlink" title="出队操作算法实现："></a>出队操作算法实现：</h3>
+      <figure class="highlight c"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">DeQueue</span><span class="params">(SqQueue *Q,DataType *e)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(Q-&gt;front==Q-&gt;rear)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    *e=Q-&gt;data[Q-&gt;front];</span><br><span class="line">    Q-&gt;front=(Q-&gt;front+<span class="number">1</span>)%MAXSIZE;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+
+
+        <h3 id="初始化操作算法实现："   >
+          <a href="#初始化操作算法实现：" class="heading-link"><i class="fas fa-link"></i></a><a href="#初始化操作算法实现：" class="headerlink" title="初始化操作算法实现："></a>初始化操作算法实现：</h3>
+      <figure class="highlight c"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">InitQueue</span><span class="params">(SqQueue *Q)</span></span><br><span class="line">&#123;</span><br><span class="line">    Q-&gt;front=<span class="number">0</span>;</span><br><span class="line">    Q-&gt;rear=<span class="number">0</span>;</span><br><span class="line">    retutn <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="求队列长度操作算法："   >
+          <a href="#求队列长度操作算法：" class="heading-link"><i class="fas fa-link"></i></a><a href="#求队列长度操作算法：" class="headerlink" title="求队列长度操作算法："></a>求队列长度操作算法：</h3>
+      <figure class="highlight c"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">QueueLength</span><span class="params">(SqQueue Q)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> (Q.rear-Q.front+MAXSIZE)%MAXSIZE;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">Kurobalt</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2025/03/25/%E9%98%9F%E5%88%97queue/">http://example.com/2025/03/25/%E9%98%9F%E5%88%97queue/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2025/03/25/%E6%A6%82%E8%AE%BA%20/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">[ 文章无标题 ]</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2025/03/25/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E7%BA%BF%E6%80%A7%E8%A1%A8/"><span class="paginator-prev__text">[ 文章无标题 ]</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%98%9F%E5%88%97queue"><span class="toc-number">1.</span> <span class="toc-text">
+          队列queue</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.</span> <span class="toc-text">
+          队列的类型定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.1.</span> <span class="toc-text">
+          队列的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E7%90%86%E8%A7%A3"><span class="toc-number">1.1.2.</span> <span class="toc-text">
+          队列的进一步理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.3.</span> <span class="toc-text">
+          队列的基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#InitQueue-amp-Q"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">
+          InitQueue(&amp;Q):</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#EnQueue-amp-Q-e"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">
+          EnQueue(&amp;Q,e):</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DeQueue-amp-Q-amp-e"><span class="toc-number">1.1.3.3.</span> <span class="toc-text">
+          DeQueue(&amp;Q,&amp;e):</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DestoryQueue-amp-Q"><span class="toc-number">1.1.3.4.</span> <span class="toc-text">
+          DestoryQueue(&amp;Q):</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#QueueEmpty-Q"><span class="toc-number">1.1.3.5.</span> <span class="toc-text">
+          QueueEmpty(Q):</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#GetHead-Q-amp-e"><span class="toc-number">1.1.3.6.</span> <span class="toc-text">
+          GetHead(Q,&amp;e):</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E7%9A%84%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.2.</span> <span class="toc-text">
+          队列的顺序表示和实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E5%88%86%E9%98%9F%E7%A9%BA%E5%92%8C%E9%98%9F%E6%BB%A1"><span class="toc-number">1.2.1.</span> <span class="toc-text">
+          区分队空和队满</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%951"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">
+          解决方法1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%952"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">
+          解决方法2</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="toc-number">1.2.2.</span> <span class="toc-text">
+          顺序循环队列存储结构的类型定义如下：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A5%E9%98%9F%E6%93%8D%E4%BD%9C%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%EF%BC%9A"><span class="toc-number">1.2.3.</span> <span class="toc-text">
+          入队操作算法实现：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BA%E9%98%9F%E6%93%8D%E4%BD%9C%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%EF%BC%9A"><span class="toc-number">1.2.4.</span> <span class="toc-text">
+          出队操作算法实现：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%93%8D%E4%BD%9C%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%EF%BC%9A"><span class="toc-number">1.2.5.</span> <span class="toc-text">
+          初始化操作算法实现：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E9%98%9F%E5%88%97%E9%95%BF%E5%BA%A6%E6%93%8D%E4%BD%9C%E7%AE%97%E6%B3%95%EF%BC%9A"><span class="toc-number">1.2.6.</span> <span class="toc-text">
+          求队列长度操作算法：</span></a></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/author.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">我是前端菜鸡</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/kname1" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://space.bilibili.com/1399557935?spm_id_from=333.1007.0.0" target="_blank" rel="noopener" data-popover="social.bilibili" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">Bili</span></a><a class="sidebar-ov-social-item" href="https://www.youtube.com/channel/UC0l-QkAdz0oc33TM5cjf7xg" target="_blank" rel="noopener" data-popover="Youtube" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-youtube"></i></span></a><a class="sidebar-ov-social-item" href="images/wechat.jpg" target="_blank" rel="noopener" data-popover="微信" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-weixin"></i></span></a><a class="sidebar-ov-social-item" href="../images/qq.jpg" target="_blank" rel="noopener" data-popover="QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">16</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">0</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2025</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Kurobalt</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v6.3.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.8.0</span></div><div class="busuanzi"><span class="busuanzi-siteuv"><span class="busuanzi-siteuv__icon"><i class="fas fa-user"></i></span><span class="busuanzi-siteuv__info">访问人数</span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_uv"></span></span><span class="busuanzi-sitepv"><span class="busuanzi-siteuv__icon"><i class="fas fa-eye"></i></span><span class="busuanzi-siteuv__info">浏览总量</span><span class="busuanzi-siteuv__value" id="busuanzi_value_site_pv"></span></span></div><div>kurobalt'blog</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@latest/bsz.pure.mini.js" async></script><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script></body></html>
